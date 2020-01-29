@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/styles.css">
     <title>@ViewData["Title"] - MvcApiCall</title>
 
     <environment include="Development">
@@ -34,6 +36,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            @using (Html.BeginForm("LogOff", "Account"))
+                             {
+                            <h3><input type="submit" value="Log out" /></h3>
+                              }
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
