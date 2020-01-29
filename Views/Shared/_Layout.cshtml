@@ -37,10 +37,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            @using (Html.BeginForm("LogOff", "Account"))
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @using (Html.BeginForm("LogOff", "Account"))
                              {
                             <h3><input type="submit" value="Log out" /></h3>
                               }
+                            }
+                            
                         </li>
                         
                     </ul>
